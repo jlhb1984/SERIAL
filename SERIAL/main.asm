@@ -7,6 +7,16 @@
 
 
 ; Replace with your application code
-start:
-    inc r16
-    rjmp start
+START:
+	LDI		R16,HIGH(RAMEND)
+	OUT		SPH,R16
+	LDI		R16,LOW(RAMEND)
+	OUT		SPL,R16
+	LDI		R16,0B11111010		;PD0(RX) INPUT, PD1 (TX) OUTPUT, PD2(BUTTON) INPUT.
+	OUT		DDRD,R16
+
+WAIT:
+	SBIS	PIND,2
+	RJMP	WAIT
+	SBI		PORTD,7
+	RJMP	WAIT

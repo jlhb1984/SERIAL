@@ -23,6 +23,9 @@
  </OUTPUT_FILES>
  <LABELS>
   <START><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>10</LINE></START>
-  <WAIT><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>18</LINE></WAIT>
+  <CONFIGUSART><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>18</LINE></CONFIGUSART>
+  <TX><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>31</LINE></TX>
+  <ESPERATX1><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>35</LINE></ESPERATX1>
+  <ESPERATX2><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>41</LINE></ESPERATX2>
  </LABELS>
 </ASSEMBLER_INFO>

@@ -23,12 +23,15 @@
   <FILE>SERIAL.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <START><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>44</LINE></START>
+  <START><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>61</LINE></START>
   <SPI_STC><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>28</LINE></SPI_STC>
-  <MS><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>54</LINE></MS>
-  <SLAVE><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>75</LINE></SLAVE>
-  <MASTER><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>59</LINE></MASTER>
-  <TX><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>70</LINE></TX>
-  <END><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>87</LINE></END>
+  <SLAVE_C><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>49</LINE></SLAVE_C>
+  <MASTER_C><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>40</LINE></MASTER_C>
+  <EXIT><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>57</LINE></EXIT>
+  <MS><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>69</LINE></MS>
+  <SLAVE><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>90</LINE></SLAVE>
+  <MASTER><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>74</LINE></MASTER>
+  <TX><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>85</LINE></TX>
+  <END><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>102</LINE></END>
  </LABELS>
 </ASSEMBLER_INFO>

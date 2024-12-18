@@ -29,9 +29,9 @@
   <MASTER_C><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>40</LINE></MASTER_C>
   <EXIT><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>57</LINE></EXIT>
   <MS><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>69</LINE></MS>
-  <SLAVE><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>90</LINE></SLAVE>
+  <SLAVE><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>91</LINE></SLAVE>
   <MASTER><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>74</LINE></MASTER>
-  <TX><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>85</LINE></TX>
-  <END><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>102</LINE></END>
+  <TX><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>86</LINE></TX>
+  <END><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm</FILE><LINE>103</LINE></END>
  </LABELS>
 </ASSEMBLER_INFO>

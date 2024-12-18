@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm Wed Dec 18 14:39:09 2024
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm Wed Dec 18 14:51:03 2024
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm(20): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -954,7 +954,7 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SER
 00001f 940c 0029                 	JMP		SLAVE_C
                                  
                                  MASTER_C:
-000021 ec0e                      	LDI		R16,0B11001110	;MASTER CONFIGURATION.	
+000021 ea0e                      	LDI		R16,0B10101110	;OUT-IN-OUT-IN-IN-OUT-OUT-OUT-IN MASTER CONFIGURATION.	
 000022 bb07                      	OUT		DDRB,R16	
 000023 e000                      	LDI		R16,0B00000000
 000024 b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _	

@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm Thu Dec 19 10:44:27 2024
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm Thu Dec 19 15:51:40 2024
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm(20): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -936,88 +936,90 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SER
                                  
                                  .CSEG
                                  .ORG		0
-000000 940c 0031                 JMP			START
+000000 940c 0033                 JMP			START
                                  
                                  .ORG		$014
 000014 940c 0016                 JMP		SPI_STC
                                  		
                                  SPI_STC:
-000016 9ac1                      	SBI		PORTB,1
-000017 9b77                      	SBIS	SPSR,7
-000018 cffd                      	RJMP	SPI_STC
-000019 b10f                      	IN		R16,SPDR
-00001a bb02                      	OUT		PORTD,R16
-00001b 9ac2                      	SBI		PORTB,2
-00001c e400                      	LDI		R16,0B01000000	;ENVÍO @.
-00001d b90f                      	OUT		SPDR,R16	
-00001e 9bb0                      	SBIS	PINB,0
-00001f 940c 0029                 	JMP		SLAVE_C
+000016 e000                      	LDI		R16,0B00000000	;SPIE=1 SPE=1 DORD=0 MSTR=0 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
+000017 b90d                      	OUT		SPCR,R16	
+000018 9ac1                      	SBI		PORTB,1
+000019 9b77                      	SBIS	SPSR,7
+00001a cffb                      	RJMP	SPI_STC
+00001b b10f                      	IN		R16,SPDR
+00001c bb02                      	OUT		PORTD,R16
+00001d 9ac2                      	SBI		PORTB,2
+00001e e400                      	LDI		R16,0B01000000	;ENVÍO @.
+00001f b90f                      	OUT		SPDR,R16	
+000020 9bb0                      	SBIS	PINB,0
+000021 940c 002b                 	JMP		SLAVE_C
                                  
                                  MASTER_C:
-000021 ea0e                      	LDI		R16,0B10101110	;OUT-IN-OUT-IN-OUT-OUT-OUT-IN MASTER CONFIGURATION.	
-000022 bb07                      	OUT		DDRB,R16	
-000023 e000                      	LDI		R16,0B00000000
-000024 b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _	
-000025 e500                      	LDI		R16,0B01010000	;SPIE=1 SPE=1 DORD=0 MSTR=1 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
-000026 b90d                      	OUT		SPCR,R16
-000027 940c 002f                 	JMP		EXIT
+000023 ea0e                      	LDI		R16,0B10101110	;OUT-IN-OUT-IN-OUT-OUT-OUT-IN MASTER CONFIGURATION.	
+000024 bb07                      	OUT		DDRB,R16	
+000025 e000                      	LDI		R16,0B00000000
+000026 b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _	
+000027 e500                      	LDI		R16,0B01010000	;SPIE=1 SPE=1 DORD=0 MSTR=1 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
+000028 b90d                      	OUT		SPCR,R16
+000029 940c 0031                 	JMP		EXIT
                                  
                                  SLAVE_C:
-000029 e40e                      	LDI		R16,0B01001110	;IN-OUT-IN-IN-OUT-OUT-OUT-IN SLAVE CONFIGURATION.	
-00002a bb07                      	OUT		DDRB,R16
-00002b e000                      	LDI		R16,0B00000000
-00002c b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _	
-00002d ec00                      	LDI		R16,0B11000000	;SPIE=1 SPE=1 DORD=0 MSTR=0 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
-00002e b90d                      	OUT		SPCR,R16
+00002b e40e                      	LDI		R16,0B01001110	;IN-OUT-IN-IN-OUT-OUT-OUT-IN SLAVE CONFIGURATION.	
+00002c bb07                      	OUT		DDRB,R16
+00002d e000                      	LDI		R16,0B00000000
+00002e b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _	
+00002f ec00                      	LDI		R16,0B11000000	;SPIE=1 SPE=1 DORD=0 MSTR=0 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
+000030 b90d                      	OUT		SPCR,R16
                                  
                                  EXIT:		
-00002f 9478                      	SEI
-000030 9518                      	RETI	
+000031 9478                      	SEI
+000032 9518                      	RETI	
                                  
                                  START:
-000031 e004                      	LDI		R16,HIGH(RAMEND)
-000032 bf0e                      	OUT		SPH,R16
-000033 e50f                      	LDI		R16,LOW(RAMEND)
-000034 bf0d                      	OUT		SPL,R16
-000035 ef0f                      	LDI		R16,0B11111111
-000036 bb01                      	OUT		DDRD,R16
+000033 e004                      	LDI		R16,HIGH(RAMEND)
+000034 bf0e                      	OUT		SPH,R16
+000035 e50f                      	LDI		R16,LOW(RAMEND)
+000036 bf0d                      	OUT		SPL,R16
+000037 ef0f                      	LDI		R16,0B11111111
+000038 bb01                      	OUT		DDRD,R16
                                  
                                  MS:
-000037 9bb0                      	SBIS	PINB,0
-000038 c00e                      	RJMP	SLAVE
-000039 c000                      	RJMP	MASTER
+000039 9bb0                      	SBIS	PINB,0
+00003a c00e                      	RJMP	SLAVE
+00003b c000                      	RJMP	MASTER
                                  
                                  MASTER:
-00003a ea0e                      	LDI		R16,0B10101110	;OUT-IN-OUT-IN-OUT-OUT-OUT-IN MASTER CONFIGURATION.	
-00003b bb07                      	OUT		DDRB,R16	
-00003c e000                      	LDI		R16,0B00000000
-00003d b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _
-00003e ed00                      	LDI		R16,0B11010000	;SPIE=0 SPE=1 DORD=0 MSTR=1 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
-00003f b90d                      	OUT		SPCR,R16
-000040 e400                      	LDI		R16,0B01000000	;ENVIO @
-000041 b90f                      	OUT		SPDR,R16
-000042 bb02                      	OUT		PORTD,R16
-000043 9478                      	SEI
+00003c ea0e                      	LDI		R16,0B10101110	;OUT-IN-OUT-IN-OUT-OUT-OUT-IN MASTER CONFIGURATION.	
+00003d bb07                      	OUT		DDRB,R16	
+00003e e000                      	LDI		R16,0B00000000
+00003f b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _
+000040 ed00                      	LDI		R16,0B11010000	;SPIE=0 SPE=1 DORD=0 MSTR=1 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
+000041 b90d                      	OUT		SPCR,R16
+000042 e400                      	LDI		R16,0B01000000	;ENVIO @
+000043 b90f                      	OUT		SPDR,R16
+000044 bb02                      	OUT		PORTD,R16
+000045 9478                      	SEI
                                  
                                  TX:
-000044 9b77                      	SBIS	SPSR,7
-000045 cffe                      	RJMP	TX
-000046 c00a                      	RJMP	END
+000046 9b77                      	SBIS	SPSR,7
+000047 cffe                      	RJMP	TX
+000048 c00a                      	RJMP	END
                                  
                                  SLAVE:
-000047 e40e                      	LDI		R16,0B01001110	;IN-OUT-IN-IN-OUT-OUT-OUT-IN SLAVE CONFIGURATION.	
-000048 bb07                      	OUT		DDRB,R16
-000049 e40a                      	LDI		R16,0B01001010	;ENVIO J
-00004a b90f                      	OUT		SPDR,R16	
-00004b e000                      	LDI		R16,0B00000000
-00004c b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _
-00004d ec00                      	LDI		R16,0B11000000	;SPIE=1 SPE=1 DORD=0 MSTR=0 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
-00004e b90d                      	OUT		SPCR,R16	
-00004f 9ac3                      	SBI		PORTB,3
-000050 9478                      	SEI
+000049 e40e                      	LDI		R16,0B01001110	;IN-OUT-IN-IN-OUT-OUT-OUT-IN SLAVE CONFIGURATION.	
+00004a bb07                      	OUT		DDRB,R16
+00004b e40a                      	LDI		R16,0B01001010	;ENVIO J
+00004c b90f                      	OUT		SPDR,R16	
+00004d e000                      	LDI		R16,0B00000000
+00004e b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _
+00004f ec00                      	LDI		R16,0B11000000	;SPIE=1 SPE=1 DORD=0 MSTR=0 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
+000050 b90d                      	OUT		SPCR,R16	
+000051 9ac3                      	SBI		PORTB,3
+000052 9478                      	SEI
                                  
                                  END:
-000051 cfff                      	RJMP	END
+000053 cfff                      	RJMP	END
 
 
 RESOURCE USE INFORMATION
@@ -1037,7 +1039,7 @@ counted separately from r26..r31 here.
 "ATmega16A" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  39 r17:   0 r18:   0 r19:   0 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:  41 r17:   0 r18:   0 r19:   0 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 1 out of 35 (2.9%)
@@ -1053,9 +1055,9 @@ clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :   4 
-ld    :   0 ldd   :   0 ldi   :  18 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  19 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  20 pop   :   0 
+neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  21 pop   :   0 
 push  :   0 rcall :   0 ret   :   0 reti  :   1 rjmp  :   6 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   3 sbic  :   0 sbis  :   4 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
@@ -1067,7 +1069,7 @@ Instructions used: 9 out of 113 (8.0%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000a4    128      0    128   16384   0.8%
+[.cseg] 0x000000 0x0000a8    132      0    132   16384   0.8%
 [.dseg] 0x000060 0x000060      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 

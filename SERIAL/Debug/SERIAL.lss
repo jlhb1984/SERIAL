@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm Wed Dec 18 18:03:18 2024
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm Thu Dec 19 10:44:27 2024
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SERIAL\SERIAL\main.asm(20): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -1002,22 +1002,22 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\SER
                                  TX:
 000044 9b77                      	SBIS	SPSR,7
 000045 cffe                      	RJMP	TX
-000046 c008                      	RJMP	END
+000046 c00a                      	RJMP	END
                                  
                                  SLAVE:
 000047 e40e                      	LDI		R16,0B01001110	;IN-OUT-IN-IN-OUT-OUT-OUT-IN SLAVE CONFIGURATION.	
 000048 bb07                      	OUT		DDRB,R16
-                                 	;LDI		R16,0B01000000	;ENVIO @
-                                 	;OUT		SPDR,R16	
-000049 e000                      	LDI		R16,0B00000000
-00004a b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _
-00004b ec00                      	LDI		R16,0B11000000	;SPIE=1 SPE=1 DORD=0 MSTR=0 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
-00004c b90d                      	OUT		SPCR,R16	
-00004d 9ac3                      	SBI		PORTB,3
-00004e 9478                      	SEI
+000049 e40a                      	LDI		R16,0B01001010	;ENVIO J
+00004a b90f                      	OUT		SPDR,R16	
+00004b e000                      	LDI		R16,0B00000000
+00004c b90e                      	OUT		SPSR,R16		;SPIE=F	SP=F _ _ _ SPI2X=0 _ _
+00004d ec00                      	LDI		R16,0B11000000	;SPIE=1 SPE=1 DORD=0 MSTR=0 CPOL=0 CPHA=0 SPR1SPR0=00 (FOSC/4)
+00004e b90d                      	OUT		SPCR,R16	
+00004f 9ac3                      	SBI		PORTB,3
+000050 9478                      	SEI
                                  
                                  END:
-00004f cfff                      	RJMP	END
+000051 cfff                      	RJMP	END
 
 
 RESOURCE USE INFORMATION
@@ -1037,7 +1037,7 @@ counted separately from r26..r31 here.
 "ATmega16A" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  37 r17:   0 r18:   0 r19:   0 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:  39 r17:   0 r18:   0 r19:   0 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 1 out of 35 (2.9%)
@@ -1053,9 +1053,9 @@ clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :   4 
-ld    :   0 ldd   :   0 ldi   :  17 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  18 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  19 pop   :   0 
+neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  20 pop   :   0 
 push  :   0 rcall :   0 ret   :   0 reti  :   1 rjmp  :   6 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   3 sbic  :   0 sbis  :   4 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
@@ -1067,7 +1067,7 @@ Instructions used: 9 out of 113 (8.0%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000a0    124      0    124   16384   0.8%
+[.cseg] 0x000000 0x0000a4    128      0    128   16384   0.8%
 [.dseg] 0x000060 0x000060      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
